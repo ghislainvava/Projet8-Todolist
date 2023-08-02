@@ -1,17 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <h1>Enregistrez-vous !</h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+    {{ form_start(registrationForm) }} <!-- Add id attribute to form -->
+        {{ form_row(registrationForm.username, {'attr': {'id': 'username'}}) }}
+        {{ form_row(registrationForm.email, {'attr': {'id': 'email'}}) }} <!-- Add id attribute to email field -->
+        {{ form_row(registrationForm.plainPassword, {'attr': {'id': 'plainPassword'}}) }} <!-- Add id attribute to password field -->
+        {{ form_row(registrationForm.agreeTerms, {'attr': {'id': 'agreeTerms'}}) }} <!-- Add id attribute to terms checkbox -->
 
-        <button type="submit" class="btn">Register</button>
+        <button type="submit" class="btn">Inscrivez-vous</button>
     {{ form_end(registrationForm) }}
+
+    <div id="error-container"></div>
+    <div id="success-container" ></div>
+
+    
 {% endblock %}

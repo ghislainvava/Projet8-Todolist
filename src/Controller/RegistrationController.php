@@ -49,7 +49,7 @@ class RegistrationController extends AbstractController
         ]);
     }
 
-    #[Route('/test', name: 'app_test')]
+    #[Route('/registration_success', name: 'app_test')]
     public function test(): Response
     {
         return $this->render('test.html.twig');

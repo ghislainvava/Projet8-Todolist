@@ -49,8 +49,8 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
         }
 
 
-        return new RedirectResponse('/test');
-
+        return new RedirectResponse('/registration_success');
+        //return new RedirectResponse('/?arg=1');
         // For example:
         // return new RedirectResponse($this->urlGenerator->generate('some_route'));
         //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
